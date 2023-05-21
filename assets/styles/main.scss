@@ -194,21 +194,32 @@ a {
 }
 
 // ページ遷移ボタン（ページ下部）
-// ↓↓ 正直デザインがダサいので、落ち着いた雰囲気のものに修正
+// ↓↓ 正直デザインがダサいので、落ち着いた雰囲気のものに修正(済)
 .btn {
-  text-shadow: rgb(224, 191, 57) 1px 0 1px;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-family: "Shippori Mincho B1", serif;
   font-size: 1.5rem;
-  background: rgba($color: aqua, $alpha: 0.8);
-  color: azure;
-  border: double 1px rgb(95, 90, 90);
-  border-radius: 162px;
-  background: #3dc1db;
-  box-shadow: inset 6px 6px 12px #329eb4, inset -6px -6px 12px #48e4ff;
+  background: linear-gradient(45deg, #003b6f, #0076b3);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(255, 255, 255, 0.1);
   padding: 15px 55px;
   margin: 45px 0 90px;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
   &:hover {
-    transform: scale(0.95);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6),
+      0 0 0 2px rgba(255, 255, 255, 0.2);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.4),
+      0 0 0 2px rgba(255, 255, 255, 0.2);
   }
 }
