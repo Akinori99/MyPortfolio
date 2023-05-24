@@ -94,11 +94,11 @@
           href="https://twitter.com/Akinori_99?ref_src=twsrc%5Etfw"
           >Tweets by Akinori_99
         </a>
-        <script
+        <!-- <script
           async
           src="https://platform.twitter.com/widgets.js"
           charset="utf-8"
-        ></script>
+        ></script> -->
       </div>
     </div>
     <router-link to="/works" class="btn"> 作品を見る </router-link>
