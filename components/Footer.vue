@@ -1,7 +1,7 @@
 <template>
   <footer>
     <!-- ↓↓ Dateオブジェクトの.getYearメソッドを用いて表示させる -->
-    <p>&copy; 2021 AbeAkinori</p>
+    <p>&copy;{{ new Date().getFullYear() }}Abe Akinori</p>
     <!-- ↑↑ -->
   </footer>
 </template>
