@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper works">
     <div class="title">
       <h1>Works</h1>
       <p>-作品-</p>

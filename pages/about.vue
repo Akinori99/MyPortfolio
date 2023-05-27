@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper about">
     <div class="title">
       <h1>About</h1>
       <p>-自己紹介-</p>

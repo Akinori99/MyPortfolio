@@ -51,13 +51,13 @@ a {
 // ページごとの背景画像
 // ↓↓ bgimgをjsで変更するように修正
 .index {
-  background-image: url(~assets/images/top.jpg);
+  background-image: url(~/assets/images/top.jpg);
 }
 .works {
-  background-image: url(~assets/images/works.jpg);
+  background-image: url(~/assets/images/works.jpg);
 }
 .about {
-  background-image: url(~assets/images/about.jpg);
+  background-image: url(~/assets/images/about.jpg);
 }
 // ↑↑
 

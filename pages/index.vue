@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper index">
     <div class="title">
       <h1>Akinori's<br />Portfolio</h1>
     </div>

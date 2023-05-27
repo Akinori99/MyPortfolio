@@ -1,13 +1,5 @@
-<template>
-  <div class="page-set works wrapper">
-    <Header />
-    <nuxt />
-    <Footer />
-  </div>
-</template>
-
 <script>
-export default {}
+export default {};
 </script>
 
 <style lang="scss">

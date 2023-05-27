@@ -1,13 +1,5 @@
-<template>
-  <div class="page-set about wrapper">
-    <Header />
-    <nuxt />
-    <Footer />
-  </div>
-</template>
-
 <script>
-export default {}
+export default {};
 </script>
 
 <style lang="scss">
@@ -17,20 +9,20 @@ export default {}
   grid-template-rows: 0.5fr repeat(3, auto);
   gap: 20px 20px;
   grid-template-areas:
-    'myimg        myimg        myname       myname       myname'
-    'introduction introduction introduction introduction introduction'
-    'skills       skills       skills       skills       skills'
-    'contact      contact      contact      twitter      twitter';
+    "myimg        myimg        myname       myname       myname"
+    "introduction introduction introduction introduction introduction"
+    "skills       skills       skills       skills       skills"
+    "contact      contact      contact      twitter      twitter";
   @include tb {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, auto);
     grid-template-areas:
-      'myimg'
-      'myname'
-      'introduction'
-      'skills'
-      'contact'
-      'twitter';
+      "myimg"
+      "myname"
+      "introduction"
+      "skills"
+      "contact"
+      "twitter";
   }
   .myimg {
     grid-area: myimg;
@@ -46,7 +38,7 @@ export default {}
     margin-bottom: 20px;
     h1 {
       display: inline-block;
-      font-family: 'Shippori Mincho B1', serif;
+      font-family: "Shippori Mincho B1", serif;
       font-size: 5.5rem;
     }
     p {
