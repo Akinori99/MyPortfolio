@@ -1,12 +1,5 @@
-<template>
-  <div class="page-set index wrapper">
-    <Header />
-    <nuxt />
-  </div>
-</template>
-
 <script>
-export default {}
+export default {};
 </script>
 
 <style lang="scss">
