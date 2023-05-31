@@ -1,168 +1,156 @@
 <template>
   <header>
-    <!-- <v-app-bar app fixed dark hide-on-scroll height="55px"> -->
-    <!-- ↓↓ ロゴ画像とタイトルをクリックしたらホーム遷移するようリンク付 -->
-    <!-- <img class="mylogo" src="~assets/images/mylogo.svg" alt="mylogo" />
-      <v-toolbar-title>
-        <div class="h-title">Portfolio</div>
-      </v-toolbar-title>
-      ↑↑
-      <v-tabs>
-        <v-tab
-          v-for="(menuItem, index) in menuItems"
-          :key="index"
-          :to="menuItem.url"
-        >
-          {{ menuItem.name }}
-        </v-tab>
-      </v-tabs>
-      <v-app-bar-nav-icon
-        v-if="drawer === false"
-        id="open"
-        @click="drawer = !drawer"
-      />
-      <v-icon v-else-if="drawer === true" @click="drawer = false">
-        mdi-close
-      </v-icon>
-    </v-app-bar>
-    <v-navigation-drawer
-      v-model="drawer"
-      fixed
-      temporary
-      width="55%"
-      dark
-      right
-    >
-      <v-list nav dense>
-        <v-list-item-group>
-          <v-list-item
-            v-for="(menuItem, index) in menuItems"
-            :key="index"
-            :to="menuItem.url"
-          >
-            <v-list-item-title>
-              <div>{{ menuItem.name }}</div>
-            </v-list-item-title>
-          </v-list-item>
-          <div class="close" @click="drawer = false">
-            ↓↓ ×の判定範囲を適切なものに修正
-            <p>✕</p>
-            ↑↑
-          </div>
-        </v-list-item-group>
-      </v-list>
-    </v-navigation-drawer> -->
     <div>
       <div>
         <nuxt-link to="/">
-          <img src="~/assets/images/favicon.ico" alt="favicon" />
+          <img class="mylogo" src="~/assets/images/favicon.ico" alt="favicon" />
         </nuxt-link>
-        <ul>
-          <li><nuxt-link to="/works">Works</nuxt-link></li>
-          <li><nuxt-link to="/about">About</nuxt-link></li>
-        </ul>
       </div>
     </div>
+    <nav>
+      <button id="menu-open" class="btn-menu">
+        <svg
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <title>メニューを開く</title>
+          <path
+            clip-rule="evenodd"
+            d="m4.25 8c0-.41421.33579-.75.75-.75h14c.4142 0 .75.33579.75.75s-.3358.75-.75.75h-14c-.41421 0-.75-.33579-.75-.75zm0 4c0-.4142.33579-.75.75-.75h14c.4142 0 .75.3358.75.75s-.3358.75-.75.75h-14c-.41421 0-.75-.3358-.75-.75zm.75 3.25c-.41421 0-.75.3358-.75.75s.33579.75.75.75h14c.4142 0 .75-.3358.75-.75s-.3358-.75-.75-.75z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </button>
+      <div id="menu-panel">
+        <button id="menu-close" class="btn-menu">
+          <svg
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title>メニューを閉じる</title>
+            <path
+              clip-rule="evenodd"
+              d="m7.53033 6.46967c-.29289-.29289-.76777-.29289-1.06066 0s-.29289.76777 0 1.06066l4.46963 4.46967-4.46963 4.4697c-.29289.2929-.29289.7677 0 1.0606s.76777.2929 1.06066 0l4.46967-4.4696 4.4697 4.4696c.2929.2929.7677.2929 1.0606 0s.2929-.7677 0-1.0606l-4.4696-4.4697 4.4696-4.46967c.2929-.29289.2929-.76777 0-1.06066s-.7677-.29289-1.0606 0l-4.4697 4.46963z"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </button>
+        <ul class="menu-list">
+          <li><nuxt-link to="/">TOP</nuxt-link></li>
+          <li><nuxt-link to="/works">WORKS</nuxt-link></li>
+          <li><nuxt-link to="/about">ABOUT</nuxt-link></li>
+        </ul>
+      </div>
+    </nav>
   </header>
 </template>
 
 <script>
-// import constants from '~/assets/constants'
+// スライドメニュー
+const menuOpen = document.querySelector("#menu-open");
+const menuClose = document.querySelector("#menu-close");
+const menuPanel = document.querySelector("#menu-panel");
+const menuItems = document.querySelectorAll("#menu-panel li");
+const menuOptions = {
+  duration: 1400,
+  easing: "ease",
+  fill: "forwards",
+};
 
-// export default {
-//   data() {
-//     return {
-//       drawer: false,
-//       menuItems: constants.menuItems,
-//     }
-//   },
+// メニューを開く
+menuOpen.addEventListener("click", () => {
+  menuPanel.animate({ translate: ["100vw", 0] }, menuOptions);
+  // リンクをひとつずつ順に表示
+  menuItems.forEach((menuItem, index) => {
+    menuItem.animate(
+      {
+        opacity: [0, 1],
+        translate: ["2rem", 0],
+      },
+      {
+        duration: 2400,
+        delay: 300 * index,
+        easing: "ease",
+        fill: "forwards",
+      }
+    );
+  });
+});
 
-// }
+// メニューを閉じる
+menuClose.addEventListener("click", () => {
+  menuPanel.animate({ translate: [0, "100vw"] }, menuOptions);
+  menuItems.forEach((menuItem) => {
+    menuItem.animate({ opacity: [1, 0] }, menuOptions);
+  });
+});
 </script>
 
 <style lang="scss">
-// ナビゲーションタブ
-// .v-app-bar {
-//   max-width: 100vw;
-// }
-// .mylogo {
-//   height: 55px;
-//   position: relative;
-//   top: 0;
-//   margin: 0 10px;
-// }
-// .v-toolbar__title {
-//   min-width: fit-content;
-//   .h-title {
-//     font-family: "Pinyon Script", cursive;
-//     font-size: 40px;
-//   }
-// }
-// .v-tabs-bar__content {
-//   z-index: 5;
-//   display: block flex;
-//   justify-content: flex-end;
-//   margin-right: 30px;
-//   .v-tab {
-//     @include h {
-//       display: none;
-//     }
-//     margin-left: 15px;
-//     font-size: 25px;
-//     font-weight: bold;
-//     letter-spacing: 0.1rem;
-//     &:hover {
-//       text-decoration: none;
-//       color: azure;
-//       opacity: 0.6;
-//     }
-//     &.v-tab--active {
-//       color: aqua;
-//     }
-//   }
-// }
+.mylogo {
+  height: 55px;
+  position: relative;
+  top: 0;
+  margin: 0 10px;
+}
+// SLIDE MENU
+// ================================================ */
+/* 開閉ボタン */
+.btn-menu {
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  z-index: 4;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--brown);
+  border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
+  transition: 0.4s;
+}
+.btn-menu svg {
+  fill: var(--brown);
+  margin-top: 0.25rem;
+  height: 2rem;
+  width: 2rem;
+}
 
-// // ナビゲーションドロワー
-// .v-navigation-drawer {
-//   margin-top: 55px;
-//   position: fixed;
-// }
-// .v-list-item__title {
-//   & > div {
-//     margin: 15px 0;
-//     padding: 20px 0;
-//     font-size: 25px;
-//     font-weight: bold;
-//   }
-// }
-// .v-list-item {
-//   position: relative;
-//   &:first-child {
-//     margin-top: 20px;
-//   }
-//   &.v-item--active {
-//     .v-list-item__title {
-//       color: aqua;
-//     }
-//   }
-// }
-// #open {
-//   display: none;
-//   font-size: 3.5rem;
-//   margin-left: 10px;
-//   @include h {
-//     display: block;
-//   }
-// }
-// .close {
-//   display: inline-block;
-//   position: absolute;
-//   right: 0;
-//   height: fit-content;
-//   color: #ffffff;
-//   font-size: 3rem;
-//   p {
-//     display: inline;
-//   }
-// }
+/* 閉じるボタン */
+#menu-close {
+  border: 1px solid var(--light-green);
+}
+#menu-close svg {
+  fill: var(--light-green);
+}
+
+/* スライドメニューパネル */
+#menu-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 4;
+  padding: 8rem 2rem 2rem;
+  width: max(32vw, 20rem);
+  height: 100vh;
+  background-color: var(--brown);
+  box-shadow: 0 0 2rem var(--brown);
+  font-family: var(--oswald-font);
+  translate: 100vw;
+}
+.menu-list {
+  list-style: none;
+}
+.menu-list li {
+  margin: 1.5rem 0;
+  opacity: 0;
+}
+.menu-list a {
+  color: var(--light-green);
+  text-decoration: none;
+  font-size: 2rem;
+}
 </style>
