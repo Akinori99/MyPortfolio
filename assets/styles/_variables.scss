@@ -1,5 +1,17 @@
 @charset "UTF-8";
 
+/*
+VARIABLES
+================================================ */
+:root {
+  --light-green: #d5edeb;
+  --green: #63dbd0;
+  --brown: #403632;
+  --light-grey: #eee;
+  --white: #fff;
+  --oswald-font: "Oswald", sans-serif;
+}
+
 @mixin contentPosition($position, $bottom: 0) {
   min-width: 100vw;
   position: $position;
