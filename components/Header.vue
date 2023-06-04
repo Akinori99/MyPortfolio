@@ -34,17 +34,36 @@
               <title>メニューを閉じる</title>
               <path
                 clip-rule="evenodd"
-                d="m7.53033 6.46967c-.29289-.29289-.76777-.29289-1.06066 0s-.29289.76777 0 1.06066l4.46963 4.46967-4.46963 4.4697c-.29289.2929-.29289.7677 0 1.0606s.76777.2929 1.06066 0l4.46967-4.4696 4.4697 4.4696c.2929.2929.7677.2929 1.0606 0s.2929-.7677 0-1.0606l-4.4696-4.4697 4.4696-4.46967c.2929-.29289.2929-.76777 0-1.06066s-.7677-.29289-1.0606 0l-4.4697 4.46963z"
+                d="m7.53033 6.46967c-.29289-.29289-.76777-.29289-1.06066 0s-.29289.76777 0 1.06066l4.46963 4.46967-4.46963 4.4697c-.29289.2929-.29289.7677 0 1.0606s.76777.2929 1.06066 0l4.46967-4.4696 4.4697 4.4696c.2929.2929.7677.2929 1.0606 0s.2929-.7677 0-1.0606l-4.4697-4.4697 4.4696-4.46967c.2929-.29289.2929-.76777 0-1.06066s-.7677-.29289-1.0606 0l-4.4697 4.46963z"
                 fill-rule="evenodd"
               />
             </svg>
           </button>
           <ul class="menu-list">
-            <li><nuxt-link to="/" @click="closeMenu">TOP</nuxt-link></li>
-            <li><nuxt-link to="/works" @click="closeMenu">WORKS</nuxt-link></li>
-            <li><nuxt-link to="/about" @click="closeMenu">ABOUT</nuxt-link></li>
+            <li>
+              <nuxt-link to="/" @click="closeMenu" active-class="active-link"
+                >TOP</nuxt-link
+              >
+            </li>
+            <li>
+              <nuxt-link
+                to="/works"
+                @click="closeMenu"
+                active-class="active-link"
+                >WORKS</nuxt-link
+              >
+            </li>
+            <li>
+              <nuxt-link
+                to="/about"
+                @click="closeMenu"
+                active-class="active-link"
+                >ABOUT</nuxt-link
+              >
+            </li>
           </ul>
         </div>
+        <div class="menu-overlay" @click="closeMenu" v-if="isMenuOpen"></div>
       </nav>
     </div>
   </header>
@@ -99,14 +118,6 @@ SLIDE MENU
   width: 2rem;
 }
 
-/* 閉じるボタン */
-.menu-panel-open .btn-menu {
-  border: 1px solid var(--light-green);
-}
-.menu-panel-open .btn-menu svg {
-  fill: var(--light-green);
-}
-
 /* スライドメニューパネル */
 .menu-panel {
   position: fixed;
@@ -140,5 +151,19 @@ SLIDE MENU
   color: var(--light-green);
   text-decoration: none;
   font-size: 2rem;
+}
+.menu-list a.active-link {
+  border-bottom: 2px solid white;
+}
+
+/* メニューオーバーレイ */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 </style>
