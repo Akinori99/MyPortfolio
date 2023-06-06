@@ -1,9 +1,11 @@
 <template>
-  <header>
-    <div>
-      <div>
-        <nuxt-link to="/" @click="closeMenu">
+  <header class="header">
+    <div class="header-container">
+      <!-- マイロゴ -->
+      <div class="logo-container">
+        <nuxt-link to="/" @click="closeMenu" class="logo-link">
           <img class="mylogo" src="~/assets/images/favicon.ico" alt="favicon" />
+          <div class="header-hero">Akinori'sPortfolio</div>
         </nuxt-link>
       </div>
       <!-- スライドメニュー -->
@@ -88,21 +90,47 @@ export default {
 </script>
 
 <style lang="scss">
-.mylogo {
-  height: 55px;
-  position: relative;
+.header {
+  z-index: 10;
+  position: fixed;
   top: 0;
-  margin: 0 10px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  height: 70px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  .mylogo {
+    height: 55px;
+    position: relative;
+    top: 0.1rem;
+    left: 1rem;
+    margin-right: 1.5rem;
+  }
+  .header-hero {
+    display: inline-block;
+    color: azure;
+    text-shadow: 0 0 10px #ff0;
+    font-family: "Pinyon Script", cursive;
+    font-weight: normal;
+    font-size: 1.5rem;
+  }
 }
 
 /*
-SLIDE MENU
+スライドメニュー
 ================================================ */
 /* 開閉ボタン */
 .btn-menu {
   position: fixed;
   right: 1rem;
-  top: 1rem;
+  top: 0.1rem;
   z-index: 4;
   padding: 0.5rem 1rem;
   border: 1px solid var(--brown);
@@ -110,12 +138,12 @@ SLIDE MENU
   height: 4rem;
   width: 4rem;
   transition: 0.4s;
-}
-.btn-menu svg {
-  fill: var(--brown);
-  margin-top: 0.25rem;
-  height: 2rem;
-  width: 2rem;
+  svg {
+    fill: var(--brown);
+    margin-top: 0.25rem;
+    height: 2rem;
+    width: 2rem;
+  }
 }
 
 /* スライドメニューパネル */
@@ -133,12 +161,14 @@ SLIDE MENU
   transform: translateX(100%);
   transition: transform 0.4s;
 }
+
 .menu-panel-open {
   transform: translateX(0);
   .menu-list li {
     opacity: 1;
   }
 }
+
 .menu-list {
   list-style: none;
   li {
