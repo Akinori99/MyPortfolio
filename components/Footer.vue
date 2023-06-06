@@ -1,22 +1,25 @@
 <template>
-  <footer>
-    <!-- ↓↓ Dateオブジェクトの.getYearメソッドを用いて表示させる -->
-    <p>&copy;{{ new Date().getFullYear() }}Abe Akinori</p>
-    <!-- ↑↑ -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy;{{ new Date().getFullYear() }}　Abe Akinori</p>
+    </div>
   </footer>
 </template>
 
 <style lang="scss">
-footer {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  background: rgba(61, 47, 33, 0.6);
-  height: 30px;
-  margin: 0 auto;
+.footer {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
   p {
     color: azure;
-    font-size: 0.9rem;
+    font-family: "Pinyon Script", cursive;
+    font-size: 1rem;
   }
+}
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
 }
 </style>
