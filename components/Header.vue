@@ -135,25 +135,25 @@ SLIDE MENU
 }
 .menu-panel-open {
   transform: translateX(0);
+  .menu-list li {
+    opacity: 1;
+  }
 }
 .menu-list {
   list-style: none;
-}
-.menu-list li {
-  margin: 1.5rem 0;
-  opacity: 0;
-  transition: opacity 0.4s;
-}
-.menu-panel-open .menu-list li {
-  opacity: 1;
-}
-.menu-list a {
-  color: var(--light-green);
-  text-decoration: none;
-  font-size: 2rem;
-}
-.menu-list a.active-link {
-  border-bottom: 2px solid white;
+  li {
+    margin: 1.5rem 0;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  a {
+    color: var(--light-green);
+    text-decoration: none;
+    font-size: 2rem;
+  }
+  a.active-link {
+    border-bottom: 3px solid var(--light-green);
+  }
 }
 
 /* メニューオーバーレイ */
