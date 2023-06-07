@@ -91,7 +91,7 @@ export default {
 
 <style lang="scss">
 .header {
-  z-index: 10;
+  z-index: 6;
   position: fixed;
   top: 0;
   width: 100%;
@@ -153,13 +153,13 @@ export default {
   right: 0;
   z-index: 4;
   padding: 8rem 2rem 2rem;
-  width: max(32vw, 20rem);
+  width: max(24vw, 12rem);
   height: 100vh;
   background-color: var(--brown);
   box-shadow: 0 0 2rem var(--brown);
   font-family: var(--oswald-font);
   transform: translateX(100%);
-  transition: transform 0.4s;
+  transition: transform 0.3s;
 }
 
 .menu-panel-open {
@@ -191,7 +191,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 3;
+  z-index: 2;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
