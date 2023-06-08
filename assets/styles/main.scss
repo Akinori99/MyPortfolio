@@ -77,7 +77,8 @@ a {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-top: 120px;
+  height: 40vh;
+  margin-top: 20vh;
   margin-bottom: 0;
   line-height: 0.95;
   color: azure;
@@ -88,10 +89,10 @@ a {
     font-size: 220px;
     margin-bottom: 0;
     @include tb {
-      font-size: 150px;
+      font-size: 1.5rem;
     }
     @include sp {
-      font-size: 85px;
+      font-size: 6rem;
       letter-spacing: -3px;
     }
   }

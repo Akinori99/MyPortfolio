@@ -101,7 +101,7 @@
         ></script> -->
       </div>
     </div>
-    <router-link to="/works" class="btn"> 作品を見る </router-link>
+    <nuxt-link to="/works" class="btn"> 作品を見る </nuxt-link>
   </div>
 </template>
 

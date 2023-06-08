@@ -110,8 +110,8 @@ export default {
     height: 55px;
     position: relative;
     top: 0.1rem;
-    left: 1rem;
-    margin-right: 1.5rem;
+    left: 1.5rem;
+    margin-right: 3rem;
   }
   .header-hero {
     display: inline-block;
@@ -129,7 +129,7 @@ export default {
 /* 開閉ボタン */
 .btn-menu {
   position: fixed;
-  right: 1rem;
+  right: 1.5rem;
   top: 0.1rem;
   z-index: 4;
   padding: 0.5rem 1rem;
