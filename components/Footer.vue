@@ -20,6 +20,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30px;
+  height: 2.5vh;
 }
 </style>
