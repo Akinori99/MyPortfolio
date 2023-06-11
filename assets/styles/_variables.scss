@@ -43,9 +43,9 @@ VARIABLES
 
 // ブレイクポイント設定
 // ↓↓ 最近のトレンドに変更
-$breakpoint-h: 749px;
-$breakpoint-tb: 899px;
-$breakpoint-sp: 589px;
+$breakpoint-h: 767px;
+$breakpoint-tb: 767px;
+$breakpoint-sp: 500px;
 
 // ヘッダー専用
 @mixin h {

@@ -9,7 +9,6 @@
 <style lang="scss">
 .footer {
   width: 100%;
-  height: 3vh;
   background-color: rgba(0, 0, 0, 0.9);
   p {
     color: azure;
@@ -21,5 +20,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 3vh;
 }
 </style>
