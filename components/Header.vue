@@ -17,7 +17,6 @@
             width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <title>メニューを開く</title>
             <path
               clip-rule="evenodd"
               d="m4.25 8c0-.41421.33579-.75.75-.75h14c.4142 0 .75.33579.75.75s-.3358.75-.75.75h-14c-.41421 0-.75-.33579-.75-.75zm0 4c0-.4142.33579-.75.75-.75h14c.4142 0 .75.3358.75.75s-.3358.75-.75.75h-14c-.41421 0-.75-.3358-.75-.75zm.75 3.25c-.41421 0-.75.3358-.75.75s.33579.75.75.75h14c.4142 0 .75-.3358.75-.75s-.3358-.75-.75-.75z"
@@ -33,7 +32,6 @@
               width="24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <title>メニューを閉じる</title>
               <path
                 clip-rule="evenodd"
                 d="m7.53033 6.46967c-.29289-.29289-.76777-.29289-1.06066 0s-.29289.76777 0 1.06066l4.46963 4.46967-4.46963 4.4697c-.29289.2929-.29289.7677 0 1.0606s.76777.2929 1.06066 0l4.46967-4.4696 4.4697 4.4696c.2929.2929.7677.2929 1.0606 0s.2929-.7677 0-1.0606l-4.4697-4.4697 4.4696-4.46967c.2929-.29289.2929-.76777 0-1.06066s-.7677-.29289-1.0606 0l-4.4697 4.46963z"
@@ -110,8 +108,8 @@ export default {
     height: 55px;
     position: relative;
     top: 0.1rem;
-    left: 1.5rem;
-    margin-right: 3rem;
+    left: 0.5rem;
+    margin-right: 0.8rem;
   }
   .header-hero {
     display: inline-block;
@@ -119,7 +117,10 @@ export default {
     text-shadow: 0 0 10px #ff0;
     font-family: "Pinyon Script", cursive;
     font-weight: normal;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    @include sp {
+      display: none;
+    }
   }
 }
 
@@ -129,7 +130,7 @@ export default {
 /* 開閉ボタン */
 .btn-menu {
   position: fixed;
-  right: 1.5rem;
+  right: 0.5rem;
   top: 0.1rem;
   z-index: 4;
   padding: 0.5rem 1rem;
@@ -171,6 +172,7 @@ export default {
 
 .menu-list {
   list-style: none;
+  font-family: "Pinyon Script", cursive;
   li {
     margin: 1.5rem 0;
     opacity: 0;
@@ -179,10 +181,10 @@ export default {
   a {
     color: var(--light-green);
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   a.active-link {
-    border-bottom: 3px solid var(--light-green);
+    border-bottom: 2px solid var(--light-green);
   }
 }
 

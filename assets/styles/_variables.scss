@@ -45,7 +45,8 @@ VARIABLES
 // ↓↓ 最近のトレンドに変更
 $breakpoint-h: 767px;
 $breakpoint-tb: 767px;
-$breakpoint-sp: 500px;
+// $breakpoint-tb: 600px;
+$breakpoint-sp: 550px;
 
 // ヘッダー専用
 @mixin h {

@@ -86,13 +86,13 @@ a {
   h1 {
     font-family: "Pinyon Script", cursive;
     font-weight: normal;
-    font-size: 220px;
+    font-size: 11rem;
     margin-bottom: 0;
     @include tb {
-      font-size: 1.3rem;
+      font-size: 8.5rem;
     }
     @include sp {
-      font-size: 6rem;
+      font-size: 5.5rem;
       letter-spacing: -3px;
     }
   }
