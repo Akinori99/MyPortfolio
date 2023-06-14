@@ -152,7 +152,7 @@ export default {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 4;
+  z-index: 6;
   padding: 8rem 2rem 2rem;
   width: max(26vw, 12rem);
   height: 100vh;
