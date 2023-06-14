@@ -42,7 +42,8 @@ a {
   }
 }
 .wrapper {
-  max-width: 1300px;
+  // max-width: 1300px;
+  // min-height: 100vh;
   margin: 0 auto;
   padding: 0 1%;
   position: relative;
@@ -177,8 +178,8 @@ a {
     border-bottom: 3px #0bd double;
     margin-bottom: 15px;
   }
-  @include sp {
-  }
+  // @include sp {
+  // }
 }
 
 // レスポンシブ改行
