@@ -28,10 +28,6 @@ export default {
 
 <style lang="scss">
 .top-contact {
-  display: none;
   @include contactLogo;
-  @include tb {
-    display: block;
-  }
 }
 </style>
