@@ -94,6 +94,7 @@ export default {
   top: 0;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.9);
+  font-family: "Pinyon Script", cursive;
 }
 .header-container {
   display: flex;
@@ -115,7 +116,6 @@ export default {
     display: inline-block;
     color: azure;
     text-shadow: 0 0 10px #ff0;
-    font-family: "Pinyon Script", cursive;
     font-weight: normal;
     font-size: 1.8rem;
     @include sp {
@@ -134,13 +134,11 @@ export default {
   top: 0.1rem;
   z-index: 4;
   padding: 0.5rem 1rem;
-  border: 1px solid var(--brown);
-  border-radius: 50%;
   height: 4rem;
   width: 4rem;
-  transition: 0.4s;
+  transition: 0.3s;
   svg {
-    fill: var(--brown);
+    fill: var(--white);
     margin-top: 0.25rem;
     height: 2rem;
     width: 2rem;
@@ -158,7 +156,6 @@ export default {
   height: 100vh;
   background-color: var(--brown);
   box-shadow: 0 0 2rem var(--brown);
-  font-family: var(--oswald-font);
   transform: translateX(100%);
   transition: transform 0.3s;
 }
@@ -172,7 +169,7 @@ export default {
 
 .menu-list {
   list-style: none;
-  font-family: "Pinyon Script", cursive;
+
   li {
     margin: 1.5rem 0;
     opacity: 0;
