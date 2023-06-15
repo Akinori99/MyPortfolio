@@ -21,7 +21,7 @@
 // import { defineNuxtConfig } from "nuxt3";
 
 export default defineNuxtConfig({
-  css: ["@/assets/styles/main.scss"],
+  css: ["@/assets/styles/reset.css", "@/assets/styles/main.scss"],
   vite: {
     css: {
       preprocessorOptions: {
