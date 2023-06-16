@@ -105,11 +105,11 @@
   </div>
 </template>
 
-<script>
+<!-- <script>
 export default {
   layout: "about",
 };
-</script>
+</script> -->
 
 <style lang="scss">
 .about-grid {

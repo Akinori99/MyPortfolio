@@ -20,11 +20,11 @@
   </div>
 </template>
 
-<script>
+<!-- <script>
 export default {
   layout: "index",
 };
-</script>
+</script> -->
 
 <style lang="scss">
 .top-contact {
