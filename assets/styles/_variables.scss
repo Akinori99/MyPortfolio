@@ -12,19 +12,15 @@ VARIABLES
   --oswald-font: "Oswald", sans-serif;
 }
 
-@mixin contentPosition {
+@mixin pageBg {
   min-width: 100vw;
   min-height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
 }
-
-// @mixin contentPosition($position, $bottom: 0) {
-//   min-width: 100vw;
-//   position: $position;
-//   top: 0;
-//   right: 0;
-//   left: 0;
-//   bottom: $bottom;
-// }
 
 // コンタクトロゴ
 @mixin contactLogo {
