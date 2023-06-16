@@ -43,25 +43,17 @@ VARIABLES
 }
 
 // ブレイクポイント設定
-// ↓↓ 最近のトレンドに変更
-$breakpoint-h: 767px;
+// ↓↓ 最近のトレンドに変更 済
 $breakpoint-tb: 767px;
-// $breakpoint-tb: 600px;
 $breakpoint-sp: 550px;
 
-// ヘッダー専用
-@mixin h {
-  @media (max-width: ($breakpoint-h)) {
-    @content;
-  }
-}
-//タブレット
+//タブレット以上
 @mixin tb {
   @media (max-width: ($breakpoint-tb)) {
     @content;
   }
 }
-//スマホ
+//スマホ以下
 @mixin sp {
   @media (max-width: ($breakpoint-sp)) {
     @content;
