@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header>
     <div class="header-container">
       <!-- マイロゴ -->
       <div class="logo-container">
@@ -88,7 +88,7 @@ export default {
 </script>
 
 <style lang="scss">
-.header {
+header {
   z-index: 6;
   position: fixed;
   top: 0;
@@ -99,7 +99,7 @@ export default {
 .header-container {
   display: flex;
   align-items: center;
-  height: 70px;
+  height: 4rem;
 }
 
 .logo-link {
@@ -139,7 +139,6 @@ export default {
   transition: 0.3s;
   svg {
     fill: var(--white);
-    margin-top: 0.25rem;
     height: 2rem;
     width: 2rem;
   }

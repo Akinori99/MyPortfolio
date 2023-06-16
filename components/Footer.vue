@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer>
     <div class="footer-container">
       <p>&copy;{{ new Date().getFullYear() }}　Abe Akinori</p>
     </div>
@@ -7,7 +7,7 @@
 </template>
 
 <style lang="scss">
-.footer {
+footer {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.9);
   p {
@@ -20,6 +20,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 5vh;
+  height: 4vh;
 }
 </style>
