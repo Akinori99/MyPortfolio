@@ -6,9 +6,9 @@
   </footer>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 footer {
-  width: 100%;
+  width: 100vw;
   background-color: rgba(0, 0, 0, 0.9);
   p {
     color: azure;
