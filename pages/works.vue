@@ -130,12 +130,6 @@
   </div>
 </template>
 
-<!-- <script>
-export default {
-  layout: "works",
-};
-</script> -->
-
 <style lang="scss">
 .works-grid {
   display: grid;

@@ -4,7 +4,7 @@
   </footer>
 </template>
 
-<script>
+<script defer>
 export default {
   computed: {
     isIndex() {

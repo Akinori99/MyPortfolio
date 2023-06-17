@@ -69,7 +69,7 @@
   </header>
 </template>
 
-<script>
+<script defer>
 export default {
   data() {
     return {
