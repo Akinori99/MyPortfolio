@@ -27,7 +27,6 @@ a {
     opacity: 0.7;
   }
 }
-
 .wrapper {
   margin: 0 auto;
   padding: 0 0.5vw;
@@ -39,16 +38,13 @@ a {
 // ページごとの背景画像
 // ↓↓ bgimgをjsで変更するように修正
 .index {
-  background-image: url(~/assets/images/top.jpg);
-  @include pageBg;
+  @include pageBg(top);
 }
 .works {
-  background-image: url(~/assets/images/works.jpg);
-  @include pageBg;
+  @include pageBg(works);
 }
 .about {
-  background-image: url(~/assets/images/about.jpg);
-  @include pageBg;
+  @include pageBg(about);
 }
 // ↑↑
 // ページ遷移アニメーション
