@@ -47,7 +47,7 @@ VARIABLES
 $breakpoint-tb: 767px;
 $breakpoint-sp: 550px;
 
-//タブレット以上
+//タブレット以下
 @mixin tb {
   @media (max-width: ($breakpoint-tb)) {
     @content;

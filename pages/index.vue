@@ -4,7 +4,6 @@
       <h1>Akinori's<br />Portfolio</h1>
     </div>
     <nuxt-link to="/works" class="btn">作品を見る</nuxt-link>
-
     <div class="top-contact">
       <!-- ↓↓ index.vue<contact>と以下の部分をコンポーネント化・置換 -->
       <div class="contact-logo">
