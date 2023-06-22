@@ -153,7 +153,7 @@ header {
       li {
         margin: 1.5rem 0;
         opacity: 0;
-        transition: opacity 0.4s;
+        transition: 0.4s;
       }
       a {
         color: var(--light-green);
@@ -161,7 +161,7 @@ header {
         font-size: 1.8rem;
       }
       a.active-link {
-        border-bottom: 2px solid var(--light-green);
+        color: var(--green);
       }
     }
   }
