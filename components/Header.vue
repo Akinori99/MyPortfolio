@@ -151,17 +151,18 @@ header {
     .menu-list {
       list-style: none;
       li {
-        margin: 1.5rem 0;
-        opacity: 0;
+        margin: 2rem 0;
         transition: 0.4s;
       }
       a {
         color: var(--light-green);
         text-decoration: none;
         font-size: 1.8rem;
+        opacity: 0.5;
       }
       a.active-link {
         color: var(--green);
+        opacity: 1;
       }
     }
   }
