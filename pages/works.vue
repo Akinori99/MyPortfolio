@@ -10,7 +10,7 @@
         <!-- ↓↓ ブロックを別ファイルに配列化し forEachメソッドを用いて展開 -->
         <!-- また、各ブロックの詳細をモーダルウィンドウで表示するように変更 -->
         <!-- また、以下の画像含め全体の最適化を図る -->
-        <!-- ポートフォリオ -->
+        <!-- ポートフォリオ
         <div class="item">
           <a
             ><img
@@ -37,7 +37,7 @@
             <p>2021/07/03<br />【更新：2021/07/27】</p>
           </div>
         </div>
-        <!-- タイマー機能付きToDoリスト -->
+        タイマー機能付きToDoリスト
         <div class="item">
           <a href="https://akinori99.github.io/vuetodo_timer/"
             ><img
@@ -71,7 +71,7 @@
             <p>2021/07/01<br />【更新：2021/07/27】</p>
           </div>
         </div>
-        <!-- 禁煙チャレンジ -->
+        禁煙チャレンジ
         <div class="item">
           <a href="https://akinori99.github.io/no_smoking/"
             ><img
@@ -101,8 +101,8 @@
             <h3>作成日</h3>
             <p>2021/06/26<br />【更新：2021/07/27】</p>
           </div>
-        </div>
-        <!-- Coming Soon... -->
+        </div> -->
+        <!-- Coming Soon...
         <div class="item">
           <a
             ><img
@@ -122,7 +122,7 @@
             <h3>作成日</h3>
             <p>Coming Soon...</p>
           </div>
-        </div>
+        </div> -->
         <!-- ↑↑ -->
       </div>
     </div>
