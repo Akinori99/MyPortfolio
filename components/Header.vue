@@ -135,7 +135,7 @@ header {
     right: 0;
     z-index: 6;
     padding: 8rem 2rem 2rem;
-    width: max(26vw, 12rem);
+    width: max(24vw, 12rem);
     height: 100vh;
     background-color: var(--brown);
     box-shadow: 0 0 2rem var(--brown);
