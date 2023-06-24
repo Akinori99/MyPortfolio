@@ -8,10 +8,10 @@
       <!-- ↓↓ index.vue<contact>と以下の部分をコンポーネント化・置換 -->
       <div class="contact-logo">
         <a href="https://github.com/Akinori99"
-          ><img src="~assets/images/github.png" alt="GitHub"
+          ><img src="/images/github.png" alt="GitHub"
         /></a>
         <a href="https://twitter.com/Akinori_99?ref_src=twsrc%5Etfw"
-          ><img src="~assets/images/twitter.png" alt="Twitter"
+          ><img src="/images/twitter.png" alt="Twitter"
         /></a>
       </div>
       <!-- ↑↑ -->

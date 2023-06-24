@@ -4,7 +4,7 @@
       <!-- マイロゴ -->
       <div class="logo-container">
         <nuxt-link to="/" class="logo-link" @click="closeMenu">
-          <img class="mylogo" src="~/assets/images/favicon.png" alt="favicon" />
+          <img class="mylogo" src="/images/favicon.png" alt="favicon" />
           <div class="header-hero">Akinori'sPortfolio</div>
         </nuxt-link>
       </div>

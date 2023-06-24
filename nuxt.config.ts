@@ -35,7 +35,7 @@ export default defineNuxtConfig({
     head: {
       title: "Akinori's Portfolio",
       meta: [{ name: "description", content: "Portfolio" }],
-      link: [{ rel: "icon", href: "/favicon.png" }],
+      link: [{ rel: "icon", href: "/images/favicon.png" }],
     },
   },
 });

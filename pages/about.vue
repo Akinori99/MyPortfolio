@@ -7,7 +7,7 @@
     </div>
     <div class="content about-grid">
       <div class="myimg">
-        <img src="~assets/images/myface.jpg" alt="myface" />
+        <img src="/images/myface.jpg" alt="myface" />
       </div>
       <!-- ↓↓ <myname><introduction><skills><contact>の要素を別ファイルにオブジェクト化・配列化し forEachメソッドを用いて展開-->
       <div class="myname">
@@ -33,7 +33,7 @@
       <div class="skills item">
         <h2>Skill（スキル）</h2>
         <div class="skill">
-          <img src="~assets/images/htmlcss.png" alt="HTML5/CSS3" />
+          <img src="/images/htmlcss.png" alt="HTML5/CSS3" />
           <div class="skill-name">
             <p>HTML5/CSS3<br /><span>★★★★☆</span></p>
           </div>
@@ -44,7 +44,7 @@
           </div>
         </div>
         <div class="skill">
-          <img src="~assets/images/js.png" alt="JavaScript" />
+          <img src="/images/js.png" alt="JavaScript" />
           <div class="skill-name">
             <p>JavaScript<br /><span>★★★☆☆</span></p>
           </div>
@@ -55,7 +55,7 @@
           </div>
         </div>
         <div class="skill">
-          <img src="~assets/images/others.png" alt="" />
+          <img src="/images/others.png" alt="" />
           <div class="skill-name">
             <p>今後学習予定<br /><span>☆☆☆☆☆</span></p>
           </div>
@@ -70,13 +70,13 @@
         <h2>Contact（連絡先）</h2>
         <div class="contact-logo">
           <a href="https://github.com/Akinori99"
-            ><img src="~assets/images/github.png" alt="GitHub"
+            ><img src="/images/github.png" alt="GitHub"
           /></a>
           <a href="mailto:akinori.work99@gmail.com"
-            ><img src="~assets/images/gmail.png" alt="Gmail"
+            ><img src="/images/gmail.png" alt="Gmail"
           /></a>
           <a href="https://twitter.com/Akinori_99?ref_src=twsrc%5Etfw"
-            ><img src="~assets/images/twitter.png" alt="Twitter"
+            ><img src="/images/twitter.png" alt="Twitter"
           /></a>
         </div>
         <p>
