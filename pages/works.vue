@@ -37,7 +37,7 @@
     <router-link to="/about" class="btn"> 自己紹介へ </router-link>
   </div>
 </template>
-<script>
+<script defer>
 export default {
   data() {
     return {
