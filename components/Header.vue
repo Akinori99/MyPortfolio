@@ -112,7 +112,6 @@ header {
       }
     }
   }
-
   .btn-menu {
     position: fixed;
     right: 0.5rem;
@@ -128,7 +127,6 @@ header {
       width: 2rem;
     }
   }
-
   .menu-panel {
     position: fixed;
     top: 0;
@@ -147,7 +145,6 @@ header {
         opacity: 1;
       }
     }
-
     .menu-list {
       list-style: none;
       li {

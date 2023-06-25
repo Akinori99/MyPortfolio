@@ -11,7 +11,8 @@
   {
     "imgSrc": "/images/todotimer.jpg",
     "title": "タイマー機能付きToDoリスト",
-    "description": "<a href=\"https://cr-vue.mio3io.com/tutorials/todo.html\">『基礎から学ぶVue.js』のチュートリアル（ToDoリストを作りながら学習しよう！）</a>を元を作成したToDoリストに、自主的に作成したタイマー機能を付けたものです。",
+    "description": "『基礎から学ぶVue.js』のチュートリアル（ToDoリストを作りながら学習しよう！）<*参考URLは下に>を元を作成したToDoリストに、自主的に作成したタイマー機能を付けたものです。",
+    "ReferenceURL": "https://cr-vue.mio3io.com/tutorials/todo.html",
     "developmentLanguage": "HTML、SCSS、JavaScript（Vue.js）",
     "siteURL": "https://akinori99.github.io/vuetodo_timer/",
     "codeURL": "https://github.com/Akinori99/vuetodo_timer",
@@ -31,8 +32,8 @@
     "title": "Coming Soon...",
     "description": "新たに作品が完成したら、こちらに追加していく予定です。",
     "developmentLanguage": "Coming Soon...",
-    "siteURL": "Coming Soon...",
-    "codeURL": "Coming Soon...",
+    "siteURLnot": "Coming Soon...",
+    "codeURLnot": "Coming Soon...",
     "createdDate": "Coming Soon..."
   }
 ]

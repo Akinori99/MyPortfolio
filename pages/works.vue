@@ -7,164 +7,31 @@
     </div>
     <div class="content">
       <div class="works-grid">
-        <!-- ↓↓ ブロックを別ファイルに配列化し forEachメソッドを用いて展開 -->
-        <!-- また、各ブロックの詳細をモーダルウィンドウで表示するように変更 -->
-        <!-- また、以下の画像含め全体の最適化を図る -->
-        <!-- ポートフォリオ
-        <div class="item">
-          <a
-            ><img
-              class="item-img"
-              src="~assets/images/portfolio.jpg"
-              alt="ポートフォリオ"
-          /></a>
-          <h2>ポートフォリオ</h2>
-          <div class="work-desc">
-            <p>
-              Nuxt.jsによるSPA対応、Vuetifyを用いたヘッダー・フッター作成、GridLayoutとFlexboxを使ったデスクトップファーストのレスポンシブ対応。今までの学習で培った知識を詰め込んだポートフォリオサイトです。
-            </p>
-            <h3>開発言語</h3>
-            <p>HTML、SCSS、JavaScript（Vue.js、Nuxt.js）</p>
-            <h3>サイトURL</h3>
-            <p>※このサイト</p>
-            <h3>コード</h3>
-            <p>
-              <a href="https://github.com/Akinori99/portfolio"
-                >https://github.com/Akinori99/portfolio</a
-              >
-            </p>
-            <h3>作成日</h3>
-            <p>2021/07/03<br />【更新：2021/07/27】</p>
-          </div>
-        </div>
-        タイマー機能付きToDoリスト
-        <div class="item">
-          <a href="https://akinori99.github.io/vuetodo_timer/"
-            ><img
-              class="item-img"
-              src="~assets/images/todotimer.jpg"
-              alt="タイマー機能付きToDoリスト"
-          /></a>
-          <h2>タイマー機能付き<br class="br-tb" />ToDoリスト</h2>
-          <div class="work-desc">
-            <p>
-              <a href="https://cr-vue.mio3io.com/tutorials/todo.html"
-                >『基礎から学ぶVue.js』のチュートリアル（ToDoリストを作りながら学習しよう！）</a
-              >
-              を元に作成したToDoリストに、自主的に作成したタイマー機能を付けたものです。
-            </p>
-            <h3>開発言語</h3>
-            <p>HTML、SCSS、JavaScript（Vue.js）</p>
-            <h3>サイトURL</h3>
-            <p>
-              <a href="https://akinori99.github.io/vuetodo_timer/"
-                >https://akinori99.github.io/vuetodo_timer/</a
-              >
-            </p>
-            <h3>コード</h3>
-            <p>
-              <a href="https://github.com/Akinori99/vuetodo_timer"
-                >https://github.com/Akinori99/vuetodo_timer</a
-              >
-            </p>
-            <h3>作成日</h3>
-            <p>2021/07/01<br />【更新：2021/07/27】</p>
-          </div>
-        </div>
-        禁煙チャレンジ
-        <div class="item">
-          <a href="https://akinori99.github.io/no_smoking/"
-            ><img
-              class="item-img"
-              src="~assets/images/nosmoking.jpg"
-              alt="禁煙チャレンジ"
-          /></a>
-          <h2>禁煙チャレンジ</h2>
-          <div class="work-desc">
-            <p>
-              指定範囲内でランダムな数値を表示する、禁煙手助けアプリです。ページ下部には禁煙のコツを6秒ごとに表示する、揺れるメッセージチャットを設けています。
-            </p>
-            <h3>開発言語</h3>
-            <p>HTML、SCSS、JavaScript（Vue.js）</p>
-            <h3>サイトURL</h3>
-            <p>
-              <a href="https://akinori99.github.io/no_smoking/"
-                >https://akinori99.github.io/no_smoking/</a
-              >
-            </p>
-            <h3>コード</h3>
-            <p>
-              <a href="https://github.com/Akinori99/no_smoking"
-                >https://github.com/Akinori99/no_smoking</a
-              >
-            </p>
-            <h3>作成日</h3>
-            <p>2021/06/26<br />【更新：2021/07/27】</p>
-          </div>
-        </div> -->
-        <!-- Coming Soon...
-        <div class="item">
-          <a
-            ><img
-              class="item-img"
-              src="~assets/images/noimg.jpg"
-              alt="No Image"
-          /></a>
-          <h2>Coming Soon...</h2>
-          <div class="work-desc">
-            <p>新たに作品が完成したら、こちらに追加していく予定です。</p>
-            <h3>開発言語</h3>
-            <p>Coming Soon...</p>
-            <h3>サイトURL</h3>
-            <p>Coming Soon...</p>
-            <h3>コード</h3>
-            <p>Coming Soon...</p>
-            <h3>作成日</h3>
-            <p>Coming Soon...</p>
-          </div>
-        </div> -->
-        <!-- ↑↑ -->
-        <!-- <div class="item">
-          <a><img /></a>
-          <h2></h2>
-          <div class="work-desc">
-            <p></p>
-            <h3></h3>
-            <p></p>
-            <h3></h3>
-            <p></p>
-            <h3></h3>
-            <p>
-              <a href=""></a>
-            </p>
-            <h3></h3>
-            <p><br /></p>
-          </div>
-        </div> -->
-
         <div v-for="item in items" :key="item.title" class="item">
-          <a><img :src="item.imgSrc" class="item-img" alt="" /></a>
+          <a :href="item.siteURL"
+            ><img :src="item.imgSrc" class="item-img" alt=""
+          /></a>
           <h2>{{ item.title }}</h2>
           <div class="work-desc">
-            <p>{{ item.description }}</p>
+            <p>
+              {{ item.description }} <br /><a :href="item.ReferenceURL">{{
+                item.ReferenceURL
+              }}</a>
+            </p>
             <h3>開発言語</h3>
             <p>{{ item.developmentLanguage }}</p>
             <h3>サイトURL</h3>
             <p>
-              <a :href="item.siteURL">{{ item.siteURL }}</a>
+              <a :href="item.siteURL">{{ item.siteURL || item.siteURLnot }}</a>
             </p>
             <h3>コード</h3>
             <p>
-              <a :href="item.codeURL">{{ item.codeURL }}</a>
+              <a :href="item.codeURL">{{ item.codeURL || item.codeURLnot }}</a>
             </p>
             <h3>作成日</h3>
             <p v-html="item.createdDate"></p>
           </div>
         </div>
-
-        <!-- <div>
-          <PortfolioItem v-for="item in items" :key="item.title" :item="item" />
-        </div> -->
       </div>
     </div>
     <router-link to="/about" class="btn"> 自己紹介へ </router-link>
@@ -187,122 +54,7 @@ export default {
   },
 };
 </script>
-<!-- <script>
-export default {
-  data() {
-    return {
-      jsonContent: "",
-      items: [],
-    };
-  },
-  async mounted() {
-    try {
-      const response = await fetch("/works.json");
-      const jsonData = await response.text();
-      this.jsonContent = JSON.parse(jsonData);
-    } catch (error) {
-      console.error("Failed to fetch data:", error);
-    }
-  },
-};
-</script> -->
 
-<!-- <script>
-import worksItem from "@/public/works.json";
-</script> -->
-
-<!-- <script>
-export default {
-  data() {
-    return {
-      items: [
-        {
-          imgSrc: "~assets/images/portfolio.jpg",
-          title: "ポートフォリオ",
-          description:
-            "Nuxt.jsによるSPA対応、Vuetifyを用いたヘッダー・フッター作成、GridLayoutとFlexboxを使ったデスクトップファーストのレスポンシブ対応。今までの学習で培った知識を詰め込んだポートフォリオサイトです。",
-          developmentLanguage: "HTML、SCSS、JavaScript（Vue.js、Nuxt.js）",
-          siteURL: "※このサイト",
-          codeURL: "https://github.com/Akinori99/portfolio",
-          createdDate: "2021/07/03<br/>【更新：2021/07/27】",
-        },
-        {
-          imgSrc: "~assets/images/todotimer.jpg",
-          title: "タイマー機能付きToDoリスト",
-          description:
-            '<a href="https://cr-vue.mio3io.com/tutorials/todo.html">『基礎から学ぶVue.js』のチュートリアル（ToDoリストを作りながら学習しよう！）</a>を元を作成したToDoリストに、自主的に作成したタイマー機能を付けたものです。',
-          developmentLanguage: "HTML、SCSS、JavaScript（Vue.js）",
-          siteURL: "https://akinori99.github.io/vuetodo_timer/",
-          codeURL: "https://github.com/Akinori99/vuetodo_timer",
-          createdDate: "2021/07/01<br/>【更新：2021/07/27】",
-        },
-        {
-          imgSrc: "~assets/images/nosmoking.jpg",
-          title: "禁煙チャレンジ",
-          description:
-            "指定範囲内でランダムな数値を表示する、禁煙手助けアプリです。ページ下部には禁煙のコツを6秒ごとに表示する、揺れるメッセージチャットを設けています。",
-          developmentLanguage: "HTML、SCSS、JavaScript（Vue.js）",
-          siteURL: "https://akinori99.github.io/no_smoking/",
-          codeURL: "https://github.com/Akinori99/no_smoking",
-          createdDate: "2021/06/26<br/>【更新：2021/07/27】",
-        },
-        {
-          imgSrc: "~assets/images/noimg.jpg",
-          title: "Coming Soon...",
-          description: "新たに作品が完成したら、こちらに追加していく予定です。",
-          developmentLanguage: "Coming Soon...",
-          siteURL: "Coming Soon...",
-          codeURL: "Coming Soon...",
-          createdDate: "Coming Soon...",
-        },
-      ],
-    };
-  },
-};
-</script> -->
-<!-- <script>
-[
-  {
-    imgSrc: "~assets/images/portfolio.jpg",
-    title: "ポートフォリオ",
-    description:
-      "Nuxt.jsによるSPA対応、Vuetifyを用いたヘッダー・フッター作成、GridLayoutとFlexboxを使ったデスクトップファーストのレスポンシブ対応。今までの学習で培った知識を詰め込んだポートフォリオサイトです。",
-    developmentLanguage: "HTML、SCSS、JavaScript（Vue.js、Nuxt.js）",
-    siteURL: "※このサイト",
-    codeURL: "https://github.com/Akinori99/portfolio",
-    createdDate: "2021/07/03<br/>【更新：2021/07/27】",
-  },
-  {
-    imgSrc: "~assets/images/todotimer.jpg",
-    title: "タイマー機能付きToDoリスト",
-    description:
-      '<a href="https://cr-vue.mio3io.com/tutorials/todo.html">『基礎から学ぶVue.js』のチュートリアル（ToDoリストを作りながら学習しよう！）</a>を元を作成したToDoリストに、自主的に作成したタイマー機能を付けたものです。',
-    developmentLanguage: "HTML、SCSS、JavaScript（Vue.js）",
-    siteURL: "https://akinori99.github.io/vuetodo_timer/",
-    codeURL: "https://github.com/Akinori99/vuetodo_timer",
-    createdDate: "2021/07/01<br/>【更新：2021/07/27】",
-  },
-  {
-    imgSrc: "~assets/images/nosmoking.jpg",
-    title: "禁煙チャレンジ",
-    description:
-      "指定範囲内でランダムな数値を表示する、禁煙手助けアプリです。ページ下部には禁煙のコツを6秒ごとに表示する、揺れるメッセージチャットを設けています。",
-    developmentLanguage: "HTML、SCSS、JavaScript（Vue.js）",
-    siteURL: "https://akinori99.github.io/no_smoking/",
-    codeURL: "https://github.com/Akinori99/no_smoking",
-    createdDate: "2021/06/26<br/>【更新：2021/07/27】",
-  },
-  {
-    imgSrc: "~assets/images/noimg.jpg",
-    title: "Coming Soon...",
-    description: "新たに作品が完成したら、こちらに追加していく予定です。",
-    developmentLanguage: "Coming Soon...",
-    siteURL: "Coming Soon...",
-    codeURL: "Coming Soon...",
-    createdDate: "Coming Soon...",
-  },
-];
-</script> -->
 <style lang="scss">
 .works-grid {
   display: grid;
@@ -334,10 +86,10 @@ export default {
     font-size: 1.5rem;
     border-left: 8px solid rgb(3, 34, 138);
     border-radius: 20px;
-    padding-left: 10px;
+    padding-left: 15px;
   }
   p {
-    padding: 15px 20px;
+    padding: 15px 25px 30px;
   }
 }
 </style>
