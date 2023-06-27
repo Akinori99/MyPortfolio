@@ -94,16 +94,29 @@
           href="https://twitter.com/Akinori_99?ref_src=twsrc%5Etfw"
           >Tweets by Akinori_99
         </a>
-        <!-- <script
-          async
-          src="https://platform.twitter.com/widgets.js"
-          charset="utf-8"
-        ></script> -->
       </div>
     </div>
     <nuxt-link to="/works" class="btn"> 作品を見る </nuxt-link>
   </div>
 </template>
+
+<script defer>
+export default {
+  data() {
+    return {
+      items: [],
+    };
+  },
+  async mounted() {
+    try {
+      const response = await fetch("/about.json");
+      this.items = await response.json();
+    } catch (error) {
+      console.error("Failed to fetch data:", error);
+    }
+  },
+};
+</script>
 
 <style lang="scss">
 .about-grid {
