@@ -7,7 +7,7 @@
     </div>
     <div class="content">
       <div class="works-grid">
-        <div v-for="item in items" :key="item.title" class="item">
+        <div v-for="item in workItems" :key="item.title" class="item">
           <a :href="item.siteURL"
             ><img :src="item.imgSrc" class="item-img" alt=""
           /></a>
@@ -41,13 +41,13 @@
 export default {
   data() {
     return {
-      items: [],
+      workItems: [],
     };
   },
   async mounted() {
     try {
       const response = await fetch("/works.json");
-      this.items = await response.json();
+      this.workItems = await response.json();
     } catch (error) {
       console.error("Failed to fetch data:", error);
     }

@@ -14,20 +14,17 @@
         <h1>阿部亮則</h1>
         <p>-Abe Akinori-</p>
       </div>
-      <div class="introduction item">
-        <h2>Introduction<br class="br-sp" />（自己紹介）</h2>
+      <div
+        v-for="item in aboutItems"
+        :key="item.introduction"
+        class="introduction item"
+      >
+        <h2>{{ item.introduction.title }}</h2>
+        <p>{{ item.introduction.content.maindescription }}</p>
         <p>
-          大正大学-表現学部-表現文化学科-クリエイティブライティングコース所属の阿部亮則（あべあきのり）と申します。<br />
-          大学では小説などの文章表現・技法について学び、学業以外では喫茶店のアルバイトと、独学でのプログラミング学習に注力しております。
-        </p>
-        <p>
-          <span>【アルバイト】</span><br />
-          遅番（夜間勤務）のリーダーとして、店長から新人の教育・カウンター人材の育成を任されております。教育の際に、資料を提示しながら要点を簡潔に伝えることと、相手の理解度に応じて教える量とスピードを調整することを心がけ、今までに10名以上の教育を担当いたしました。
-        </p>
-        <p>
-          <span>【プログラミング】</span><br />
-          フロントエンドエンジニアを目指し、1年ほど前にプログラミング学習を始めました。Progateやドットインストールで基礎の基礎を身につけた後は、YouTubeやWebサイト、市販教材を参考に、実際に手を動かしながら学びを進めて参りました。将来的にはフロントエンドだけでなく、バックエンドもこなせるフルスタックエンジニアを目指しております。<br />
-          まだアウトプットも少なく、修行中の身ではありますが、エラーを乗り越えた瞬間、そして、作品ができあがった瞬間の底知れぬ喜びと達成感を糧にコツコツと学習に取り組んでおります。
+          <span>{{ item.introduction.content.subtitle }}</span
+          ><br />
+          {{ item.introduction.content.description }}
         </p>
       </div>
       <div class="skills item">
@@ -104,13 +101,13 @@
 export default {
   data() {
     return {
-      items: [],
+      aboutItems: [],
     };
   },
   async mounted() {
     try {
       const response = await fetch("/about.json");
-      this.items = await response.json();
+      this.aboutItems = await response.json();
     } catch (error) {
       console.error("Failed to fetch data:", error);
     }
