@@ -14,55 +14,43 @@
         <h1>阿部亮則</h1>
         <p>-Abe Akinori-</p>
       </div>
-      <div
-        v-for="item in aboutItems"
-        :key="item.introduction"
-        class="introduction item"
-      >
-        <h2>{{ item.introduction.title }}</h2>
-        <p>{{ item.introduction.content.maindescription }}</p>
-        <p>
-          <span>{{ item.introduction.content.subtitle }}</span
-          ><br />
-          {{ item.introduction.content.description }}
-        </p>
-      </div>
-      <div class="skills item">
-        <h2>Skill（スキル）</h2>
-        <div class="skill">
-          <img src="/images/htmlcss.png" alt="HTML5/CSS3" />
-          <div class="skill-name">
-            <p>HTML5/CSS3<br /><span>★★★★☆</span></p>
-          </div>
-          <div class="skill-desc">
-            <p>
-              基本的なコーディングに加え、GridLayoutやFlexboxによるレスポンシブ対応、Sassを用いたコーディングが可能です。エディタはVisualStudioCodeを使用しております。
-            </p>
-          </div>
+
+      <div>
+        <div
+          v-for="item in introductionItems"
+          :key="item.introduction.title"
+          class="introduction item"
+        >
+          <h2>{{ item.introduction.title }}</h2>
+          <p>{{ item.introduction.content[0].maindescription }}</p>
+          <p>
+            <span>{{ item.introduction.content[1].subtitle }}</span
+            ><br />
+            {{ item.introduction.content[1].description }}
+          </p>
+          <p>
+            <span>{{ item.introduction.content[2].subtitle }}</span
+            ><br />
+            {{ item.introduction.content[2].description }}
+          </p>
         </div>
-        <div class="skill">
-          <img src="/images/js.png" alt="JavaScript" />
-          <div class="skill-name">
-            <p>JavaScript<br /><span>★★★☆☆</span></p>
-          </div>
-          <div class="skill-desc">
-            <p>
-              まだまだ学習途中ですが、データのやり取りやDOM操作などの基本的な操作が可能です。フレームワークは、このポートフォリオでも使用しているVue.jsやNuxt.jsを勉強しております。Node.jsやReact.jsは基礎学習の際に軽く触れました。今後は、TypeScriptにも手を伸ばしていきたいと考えております。
-            </p>
-          </div>
-        </div>
-        <div class="skill">
-          <img src="/images/others.png" alt="" />
-          <div class="skill-name">
-            <p>今後学習予定<br /><span>☆☆☆☆☆</span></p>
-          </div>
-          <div class="skill-desc">
-            <p>
-              将来的にはフロントエンドだけでなく、バックエンドもこなせるフルスタックエンジニアを目指しているため、サーバーサイド言語のRubyやJAVA、PHP、また、データベースも学習予定です。
-            </p>
+
+        <div class="skills item">
+          <h2>{{ skills.title }}</h2>
+          <div v-for="skill in skills.items" :key="skill.name" class="skill">
+            <img :src="skill.imgSrc" :alt="skill.name" />
+            <div class="skill-name">
+              <p>
+                {{ skill.name }}<br /><span>{{ skill.rating }}</span>
+              </p>
+            </div>
+            <div class="skill-desc">
+              <p>{{ skill.description }}</p>
+            </div>
           </div>
         </div>
       </div>
+
       <div class="contact item">
         <h2>Contact（連絡先）</h2>
         <div class="contact-logo">
@@ -97,23 +85,88 @@
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      introductionItems: [],
+      skills: {},
+    };
+  },
+  async fetch() {
+    this.introductionItems = [
+      {
+        introduction: {
+          title: "Introduction\n（自己紹介）",
+          content: [
+            {
+              maindescription:
+                "大正大学-表現学部-表現文化学科-クリエイティブライティングコース所属の阿部亮則（あべあきのり）と申します。/n大学では小説などの文章表現・技法について学び、学業以外では喫茶店のアルバイトと、独学でのプログラミング学習に注力しております。",
+            },
+            {
+              subtitle: "アルバイト",
+              description:
+                "遅番（夜間勤務）のリーダーとして、店長から新人の教育・カウンター人材の育成を任されております。教育の際に、資料を提示しながら要点を簡潔に伝えることと、相手の理解度に応じて教える量とスピードを調整することを心がけ、今までに10名以上の教育を担当いたしました。",
+            },
+            {
+              subtitle: "プログラミング",
+              description:
+                "フロントエンドエンジニアを目指し、1年ほど前にプログラミング学習を始めました。Progateやドットインストールで基礎の基礎を身につけた後は、YouTubeやWebサイト、市販教材を参考に、実際に手を動かしながら学びを進めて参りました。将来的にはフロントエンドだけでなく、バックエンドもこなせるフルスタックエンジニアを目指しております。まだアウトプットも少なく、修行中の身ではありますが、エラーを乗り越えた瞬間、そして、作品ができあがった瞬間の底知れぬ喜びと達成感を糧にコツコツと学習に取り組んでおります。",
+            },
+          ],
+        },
+        skills: {
+          title: "Skill\n（スキル）",
+          items: [
+            {
+              imgSrc: "/images/htmlcss.png",
+              name: "HTML5/CSS3",
+              rating: "★★★★☆",
+              description:
+                "基本的なコーディングに加え、GridLayoutやFlexboxによるレスポンシブ対応、Sassを用いたコーディングが可能です。エディタはVisualStudioCodeを使用しております。",
+            },
+            {
+              imgSrc: "/images/js.png",
+              name: "JavaScript",
+              rating: "★★★☆☆",
+              description:
+                "まだまだ学習途中ですが、データのやり取りやDOM操作などの基本的な操作が可能です。フレームワークは、このポートフォリオでも使用しているVue.jsやNuxt.jsを勉強しております。Node.jsやReact.jsは基礎学習の際に軽く触れました。今後は、TypeScriptにも手を伸ばしていきたいと考えております。",
+            },
+            {
+              imgSrc: "/images/others.png",
+              name: "今後学習予定",
+              rating: "☆☆☆☆☆",
+              description:
+                "将来的にはフロントエンドだけでなく、バックエンドもこなせるフルスタックエンジニアを目指しているため、サーバーサイド言語のRubyやJAVA、PHP、また、データベースも学習予定です。",
+            },
+          ],
+        },
+      },
+    ];
+  },
+};
+</script>
+
+<!--
 <script defer>
 export default {
   data() {
     return {
-      aboutItems: [],
+      introductionItems: [],
+      skillItems: [],
     };
   },
   async mounted() {
     try {
       const response = await fetch("/about.json");
-      this.aboutItems = await response.json();
+      this.introductionItems = await response.json().introduction;
+      this.skillItems = await response.json().skills;
     } catch (error) {
       console.error("Failed to fetch data:", error);
     }
   },
 };
-</script>
+</script> -->
 
 <style lang="scss">
 .about-grid {
