@@ -15,72 +15,66 @@
         <p>-Abe Akinori-</p>
       </div>
 
-      <div
-        v-for="item in introductionItems"
-        :key="item.introduction.title"
-        class="introduction item"
-      >
-        <h2>{{ item.introduction.title }}</h2>
-        <p>{{ item.introduction.content[0].maindescription }}</p>
-        <p>
-          <span>{{ item.introduction.content[1].subtitle }}</span
-          ><br />
-          {{ item.introduction.content[1].description }}
-        </p>
-        <p>
-          <span>{{ item.introduction.content[2].subtitle }}</span
-          ><br />
-          {{ item.introduction.content[2].description }}
-        </p>
+      <div class="introduction item">
+        <h2>Introduction<br class="br-sp" />（自己紹介）</h2>
+        <div v-if="introductionItems.length">
+          <p v-for="item in introductionItems" :key="item.title">
+            <span>{{ item.title }}</span
+            ><br />
+            {{ item.description }}
+          </p>
+        </div>
       </div>
 
       <div class="skills item">
-        <h2>{{ skills.title }}</h2>
-        <div v-for="skill in skillItems" :key="skill.name" class="skill">
-          <img :src="skill.imgSrc" :alt="skill.name" />
-          <div class="skill-name">
-            <p>
-              {{ skill.name }}<br /><span>{{ skill.rating }}</span>
-            </p>
-          </div>
-          <div class="skill-desc">
-            <p>{{ skill.description }}</p>
+        <h2>Skill（スキル）</h2>
+        <div v-if="skillItems.length">
+          <div v-for="skill in skillItems" :key="skill.name" class="skill">
+            <img :src="skill.imgSrc" :alt="skill.name" />
+            <div class="skill-name">
+              <p>
+                {{ skill.name }}<br /><span>{{ skill.rating }}</span>
+              </p>
+            </div>
+            <div class="skill-desc">
+              <p>{{ skill.description }}</p>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="contact item">
-        <h2>Contact（連絡先）</h2>
-        <div class="contact-logo">
-          <a href="https://github.com/Akinori99"
-            ><img src="/images/github.png" alt="GitHub"
-          /></a>
-          <a href="mailto:akinori.work99@gmail.com"
-            ><img src="/images/gmail.png" alt="Gmail"
-          /></a>
-          <a href="https://twitter.com/Akinori_99?ref_src=twsrc%5Etfw"
-            ><img src="/images/twitter.png" alt="Twitter"
-          /></a>
-        </div>
-        <p>
-          ※ご連絡はTwitterのDM・<br class="br-sp" />Gmailにてお願いいたします。
-        </p>
-        <p>※GitHubにて作品のコードを<br class="br-sp" />公開中！</p>
-      </div>
-      <!-- ↑↑ -->
-      <div class="twitter item">
-        <h2>Twitter</h2>
-        <a
-          class="twitter-timeline"
-          data-height="400"
-          data-theme="dark"
-          href="https://twitter.com/Akinori_99?ref_src=twsrc%5Etfw"
-          >Tweets by Akinori_99
-        </a>
       </div>
     </div>
-    <nuxt-link to="/works" class="btn"> 作品を見る </nuxt-link>
+
+    <div class="contact item">
+      <h2>Contact（連絡先）</h2>
+      <div class="contact-logo">
+        <a href="https://github.com/Akinori99"
+          ><img src="/images/github.png" alt="GitHub"
+        /></a>
+        <a href="mailto:akinori.work99@gmail.com"
+          ><img src="/images/gmail.png" alt="Gmail"
+        /></a>
+        <a href="https://twitter.com/Akinori_99?ref_src=twsrc%5Etfw"
+          ><img src="/images/twitter.png" alt="Twitter"
+        /></a>
+      </div>
+      <p>
+        ※ご連絡はTwitterのDM・<br class="br-sp" />Gmailにてお願いいたします。
+      </p>
+      <p>※GitHubにて作品のコードを<br class="br-sp" />公開中！</p>
+    </div>
+    <!-- ↑↑ -->
+    <div class="twitter item">
+      <h2>Twitter</h2>
+      <a
+        class="twitter-timeline"
+        data-height="400"
+        data-theme="dark"
+        href="https://twitter.com/Akinori_99?ref_src=twsrc%5Etfw"
+        >Tweets by Akinori_99
+      </a>
+    </div>
   </div>
+  <nuxt-link to="/works" class="btn"> 作品を見る </nuxt-link>
 </template>
 
 <script>
@@ -94,35 +88,17 @@ export default {
   async mounted() {
     try {
       const introductionResponse = await fetch("/introduction.json");
-      const skillsResponse = await fetch("/skills.json");
       this.introductionItems = await introductionResponse.json();
+      const skillsResponse = await fetch("/skills.json");
       this.skillItems = await skillsResponse.json();
     } catch (error) {
       console.error("Failed to fetch data:", error);
+      this.introductionItems = [];
+      this.skillItems = [];
     }
   },
 };
 </script>
-<!--
-<script defer>
-export default {
-  data() {
-    return {
-      introductionItems: [],
-      skillItems: [],
-    };
-  },
-  async mounted() {
-    try {
-      const response = await fetch("/about.json");
-      this.introductionItems = await response.json().introduction;
-      this.skillItems = await response.json().skills;
-    } catch (error) {
-      console.error("Failed to fetch data:", error);
-    }
-  },
-};
-</script> -->
 
 <style lang="scss">
 .about-grid {
