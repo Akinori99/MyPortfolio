@@ -42,42 +42,31 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="contact item">
-      <h2>Contact（連絡先）</h2>
-      <div class="contact-logo">
-        <a href="https://github.com/Akinori99"
-          ><img src="/images/github.png" alt="GitHub"
-        /></a>
-        <a href="mailto:akinori.work99@gmail.com"
-          ><img src="/images/gmail.png" alt="Gmail"
-        /></a>
-        <a href="https://twitter.com/Akinori_99?ref_src=twsrc%5Etfw"
-          ><img src="/images/twitter.png" alt="Twitter"
-        /></a>
+      <div class="contact item">
+        <h2>Contact（連絡先）</h2>
+        <div class="contact-logo">
+          <a href="https://github.com/Akinori99"
+            ><img src="/images/github.png" alt="GitHub"
+          /></a>
+          <a href="mailto:akinori.work99@gmail.com"
+            ><img src="/images/gmail.png" alt="Gmail"
+          /></a>
+          <a href="https://twitter.com/Akinori_99?ref_src=twsrc%5Etfw"
+            ><img src="/images/twitter.png" alt="Twitter"
+          /></a>
+        </div>
+        <p>
+          ※ご連絡はTwitterのDM・<br class="br-sp" />Gmailにてお願いいたします。
+        </p>
+        <p>※GitHubにて作品のコードを<br class="br-sp" />公開中！</p>
       </div>
-      <p>
-        ※ご連絡はTwitterのDM・<br class="br-sp" />Gmailにてお願いいたします。
-      </p>
-      <p>※GitHubにて作品のコードを<br class="br-sp" />公開中！</p>
     </div>
-    <!-- ↑↑ -->
-    <div class="twitter item">
-      <h2>Twitter</h2>
-      <a
-        class="twitter-timeline"
-        data-height="400"
-        data-theme="dark"
-        href="https://twitter.com/Akinori_99?ref_src=twsrc%5Etfw"
-        >Tweets by Akinori_99
-      </a>
-    </div>
+    <nuxt-link to="/works" class="btn"> 作品を見る </nuxt-link>
   </div>
-  <nuxt-link to="/works" class="btn"> 作品を見る </nuxt-link>
 </template>
 
-<script>
+<script defer>
 export default {
   data() {
     return {
@@ -110,7 +99,7 @@ export default {
     "myimg        myimg        myname       myname       myname"
     "introduction introduction introduction introduction introduction"
     "skills       skills       skills       skills       skills"
-    "contact      contact      contact      twitter      twitter";
+    "contact      contact      contact      contact      contact";
   @include tb {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, auto);
@@ -119,8 +108,7 @@ export default {
       "myname"
       "introduction"
       "skills"
-      "contact"
-      "twitter";
+      "contact";
   }
   .myimg {
     grid-area: myimg;
@@ -185,7 +173,7 @@ export default {
       font-weight: bold;
       margin-left: 15px;
       span {
-        color: rgb(136, 116, 1);
+        color: rgb(165, 143, 18);
       }
     }
     .skill-desc {
@@ -199,13 +187,6 @@ export default {
   @include contactLogo;
   p {
     margin: 15px 0;
-  }
-}
-.twitter {
-  grid-area: twitter;
-  padding-top: 3.5%;
-  @include sp {
-    padding-top: 0;
   }
 }
 </style>

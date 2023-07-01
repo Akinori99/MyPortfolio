@@ -32,6 +32,7 @@ a {
   padding: 0 0.5vw;
   position: relative;
   overflow: hidden;
+  // width: max(1200px);
   min-height: 100vh;
 }
 
@@ -70,13 +71,13 @@ a {
   h1 {
     font-family: "Pinyon Script", cursive;
     font-weight: normal;
-    font-size: 11rem;
+    font-size: 12.5rem;
     margin-bottom: 0;
     @include tb {
-      font-size: 8.5rem;
+      font-size: 9rem;
     }
     @include sp {
-      font-size: 5.5rem;
+      font-size: 6rem;
       letter-spacing: -3px;
     }
   }
@@ -148,12 +149,13 @@ a {
   background: rgba($color: azure, $alpha: 0.75);
   color: black;
   border-radius: 10px;
-  padding: 1% 2%;
-  width: 100%;
+  margin: 0 auto;
+  padding: 1% 1.5%;
+  max-width: 1600px;
 }
 .item {
   color: black;
-  padding: 2%;
+  padding: 2% 4%;
   opacity: 0.9;
   border-radius: 10px;
   background: linear-gradient(225deg, #f8f8f8, #d1d1d1);
