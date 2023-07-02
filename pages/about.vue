@@ -17,28 +17,26 @@
 
       <div class="introduction item">
         <h2>Introduction<br class="br-sp" />（自己紹介）</h2>
-        <div v-if="introductionItems.length">
-          <p v-for="item in introductionItems" :key="item.title">
-            <span>{{ item.title }}</span
-            ><br />
-            {{ item.description }}
-          </p>
-        </div>
+
+        <p v-for="item in introductionItems" :key="item.title">
+          <span>{{ item.title }}</span
+          ><br />
+          {{ item.description }}
+        </p>
       </div>
 
       <div class="skills item">
         <h2>Skill（スキル）</h2>
-        <div v-if="skillItems.length">
-          <div v-for="skill in skillItems" :key="skill.name" class="skill">
-            <img :src="skill.imgSrc" :alt="skill.name" />
-            <div class="skill-name">
-              <p>
-                {{ skill.name }}<br /><span>{{ skill.rating }}</span>
-              </p>
-            </div>
-            <div class="skill-desc">
-              <p>{{ skill.description }}</p>
-            </div>
+
+        <div v-for="skill in skillItems" :key="skill.name" class="skill">
+          <img :src="skill.imgSrc" :alt="skill.name" />
+          <div class="skill-name">
+            <p>
+              {{ skill.name }}<br /><span>{{ skill.rating }}</span>
+            </p>
+          </div>
+          <div class="skill-desc">
+            <p>{{ skill.description }}</p>
           </div>
         </div>
       </div>
@@ -77,13 +75,11 @@ export default {
   async mounted() {
     try {
       const introductionResponse = await fetch("/introduction.json");
-      this.introductionItems = await introductionResponse.json();
       const skillsResponse = await fetch("/skills.json");
+      this.introductionItems = await introductionResponse.json();
       this.skillItems = await skillsResponse.json();
     } catch (error) {
       console.error("Failed to fetch data:", error);
-      this.introductionItems = [];
-      this.skillItems = [];
     }
   },
 };
