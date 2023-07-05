@@ -32,12 +32,8 @@ a {
   padding: 0 0.5vw;
   position: relative;
   overflow: hidden;
-  // width: max(1200px);
   min-height: 100vh;
 }
-
-// ページごとの背景画像
-// ↓↓ bgimgをjsで変更するように修正
 .index {
   @include pageBg(top);
 }
@@ -47,7 +43,7 @@ a {
 .about {
   @include pageBg(about);
 }
-// ↑↑
+
 // ページ遷移アニメーション
 .layout-enter-active,
 .layout-leave-active {
@@ -202,7 +198,6 @@ a {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6),
       0 0 0 2px rgba(255, 255, 255, 0.2);
   }
-
   &:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.4),
