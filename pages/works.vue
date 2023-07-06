@@ -14,9 +14,11 @@
           <h2>{{ item.title }}</h2>
           <div class="work-desc">
             <p>
-              {{ item.description }} <br /><a :href="item.ReferenceURL">{{
-                item.ReferenceURL
-              }}</a>
+              {{ item.description }} <br /><a
+                v-if="item.ReferenceURL"
+                :href="item.ReferenceURL"
+                >※:{{ item.ReferenceURL }}</a
+              >
             </p>
             <h3>開発言語</h3>
             <p>{{ item.developmentLanguage }}</p>
