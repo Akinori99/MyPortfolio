@@ -56,12 +56,10 @@ a {
 
 // ページタイトル
 .title {
-  display: flex;
-  flex-direction: column;
   position: relative;
   margin-top: 21vh;
   margin-bottom: 0;
-  line-height: 0.95;
+  line-height: 1;
   color: azure;
   text-shadow: 0 0 10px #ff0;
   h1 {
@@ -94,19 +92,19 @@ a {
 // スクロール誘導
 .scroll {
   position: absolute;
-  top: 320px;
+  top: 330px;
   left: 50%;
   height: 50px;
   @include tb {
-    top: 260px;
+    top: 270px;
   }
   @include sp {
-    top: 200px;
+    top: 220px;
   }
   span {
     position: absolute;
     left: -19px;
-    top: -15px;
+    top: -17px;
     color: #eee;
     font-size: 0.8rem;
     font-weight: bold;
@@ -116,7 +114,7 @@ a {
     content: "";
     position: absolute;
     top: 0;
-    width: 1px;
+    width: 2px;
     background: #eee;
     animation: pathmove 1.5s ease-in-out infinite;
     opacity: 0;
@@ -142,7 +140,7 @@ a {
 // ページコンテンツ
 // ↓↓ 要素を監視し、画面に現れたらふわっと下から表示するように変更
 .content {
-  background: rgba($color: azure, $alpha: 0.75);
+  background: rgba($color: azure, $alpha: 0.8);
   color: black;
   border-radius: 10px;
   margin: 0 auto;
@@ -164,6 +162,7 @@ a {
 }
 
 // レスポンシブ改行
+// ↓これ使ってるところある？
 .br-tb {
   display: none;
   @include tb {

@@ -17,7 +17,7 @@
               {{ item.description }} <br /><a
                 v-if="item.ReferenceURL"
                 :href="item.ReferenceURL"
-                >※:{{ item.ReferenceURL }}</a
+                >※ {{ item.ReferenceURL }}</a
               >
             </p>
             <h3>開発言語</h3>
