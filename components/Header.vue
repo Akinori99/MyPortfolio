@@ -138,11 +138,13 @@ header {
     background-color: var(--brown);
     box-shadow: 0 0 2rem var(--brown);
     transform: translateX(100%);
-    transition: transform 0.3s;
+    transition: transform 0.4s;
     &.menu-panel-open {
       transform: translateX(0);
       .menu-list li {
         opacity: 1;
+        // 以下動くように修正
+        animation: 1400ms ease forwards;
       }
     }
     .menu-list {
