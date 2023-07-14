@@ -9,7 +9,6 @@
       <div class="myimg">
         <img src="/images/myface.jpg" alt="myface" />
       </div>
-      <!-- ↓↓ <myname><introduction><skills><contact>の要素を別ファイルにオブジェクト化・配列化し forEachメソッドを用いて展開-->
       <div class="myname">
         <h1>阿部亮則</h1>
         <p>-Abe Akinori-</p>
@@ -17,7 +16,6 @@
 
       <div class="introduction item">
         <h2>Introduction<br class="br-sp" />（自己紹介）</h2>
-
         <p v-for="item in introductionItems" :key="item.title">
           <span>{{ item.title }}</span
           ><br />
@@ -54,10 +52,8 @@
             ><img src="/images/twitter.png" alt="Twitter"
           /></a>
         </div>
-        <p>
-          ※ご連絡はTwitterのDM・<br class="br-sp" />Gmailにてお願いいたします。
-        </p>
-        <p>※GitHubにて作品のコードを<br class="br-sp" />公開中！</p>
+        <p>※ご連絡はTwitterのDMまたは、Gmailにてお願いいたします。</p>
+        <p>※GitHubにて作品のコードを公開中！</p>
       </div>
     </div>
     <nuxt-link to="/works" class="btn"> 作品を見る </nuxt-link>
@@ -179,10 +175,13 @@ export default {
 }
 .contact {
   grid-area: contact;
+  text-align: center;
   height: fit-content;
   @include contactLogo;
   p {
-    margin: 15px 0;
+    text-align: left;
+    padding: 0 20px;
+    // margin: 15px 0;
   }
 }
 </style>

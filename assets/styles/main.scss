@@ -161,21 +161,6 @@ a {
   }
 }
 
-// レスポンシブ改行
-// ↓これ使ってるところある？
-.br-tb {
-  display: none;
-  @include tb {
-    display: block;
-  }
-}
-.br-sp {
-  display: none;
-  @include sp {
-    display: block;
-  }
-}
-
 // ページ遷移ボタン（ページ下部）
 .btn {
   display: inline-flex;
