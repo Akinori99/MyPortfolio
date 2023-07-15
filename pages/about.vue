@@ -84,17 +84,17 @@ export default {
 <style lang="scss">
 .about-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 0.5fr repeat(3, auto);
+  grid-template-columns: repeat(2);
+  grid-template-rows: 0.5fr repeat(3);
   gap: 20px 20px;
   grid-template-areas:
-    "myimg        myimg        myname       myname       myname"
-    "introduction introduction introduction introduction introduction"
-    "skills       skills       skills       skills       skills"
-    "contact      contact      contact      contact      contact";
+    "myimg        myname"
+    "introduction introduction"
+    "skills       skills"
+    "contact      contact";
   @include tb {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, auto);
+    grid-template-rows: repeat(6);
     grid-template-areas:
       "myimg"
       "myname"
