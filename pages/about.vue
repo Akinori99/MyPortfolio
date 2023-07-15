@@ -181,7 +181,7 @@ export default {
   p {
     text-align: left;
     padding: 0 20px;
-    // margin: 15px 0;
+    margin: 15px 0;
   }
 }
 </style>

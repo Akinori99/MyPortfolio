@@ -74,13 +74,8 @@ export default {
 }
 .item-img {
   display: flex;
-  width: 450px;
-  height: 250px;
+  aspect-ratio: 5 / 3;
   margin-bottom: 10px;
-  @include sp {
-    width: 330px;
-    height: 180px;
-  }
 }
 .work-desc {
   text-align: left;
