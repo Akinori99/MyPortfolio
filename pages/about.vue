@@ -86,7 +86,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(2);
   grid-template-rows: 0.5fr repeat(3);
-  gap: 20px 20px;
+  gap: 20px;
   grid-template-areas:
     "myimg        myname"
     "introduction introduction"
@@ -135,7 +135,6 @@ export default {
     }
   }
 }
-
 .introduction {
   grid-area: introduction;
   height: fit-content;
@@ -173,6 +172,7 @@ export default {
     }
   }
 }
+
 .contact {
   grid-area: contact;
   text-align: center;
