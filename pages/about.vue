@@ -172,7 +172,6 @@ export default {
     }
   }
 }
-
 .contact {
   grid-area: contact;
   text-align: center;
