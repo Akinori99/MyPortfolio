@@ -148,6 +148,12 @@ export default {
       font-weight: bold;
     }
   }
+  .br-sp {
+    display: none;
+    @include sp {
+      display: block;
+    }
+  }
 }
 .skills {
   grid-area: skills;
