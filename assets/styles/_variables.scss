@@ -1,8 +1,4 @@
 @charset "UTF-8";
-
-/*
-VARIABLES
-================================================ */
 :root {
   --light-green: #d5edeb;
   --green: #63dbd0;
@@ -10,15 +6,14 @@ VARIABLES
   --light-grey: #eee;
   --white: #fff;
 }
-
+// 各ページのバックグラウンドイメージ
 @mixin pageBg($bgImgUrl) {
   min-width: 100vw;
   min-height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(/images/#{$bgImgUrl}.jpg) center center / cover no-repeat fixed;
+    url("/images/#{$bgImgUrl}.jpg") center center / cover no-repeat fixed;
   text-align: center;
 }
-
 // コンタクトロゴ
 @mixin contactLogo {
   .contact-logo {
@@ -41,12 +36,9 @@ VARIABLES
     }
   }
 }
-
 // ブレイクポイント設定
-// ↓↓ 最近のトレンドに変更 済
 $breakpoint-tb: 767px;
 $breakpoint-sp: 550px;
-
 //タブレット以下
 @mixin tb {
   @media (max-width: ($breakpoint-tb)) {
