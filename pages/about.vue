@@ -15,7 +15,7 @@
       </div>
 
       <div class="introduction item">
-        <h2>Introduction<br class="br-sp" />（自己紹介）</h2>
+        <h2>Introduction（自己紹介）</h2>
         <p v-for="item in introductionItems" :key="item.title">
           <span>{{ item.title }}</span
           ><br />
@@ -146,12 +146,6 @@ export default {
       border-bottom: 1px solid black;
       margin-bottom: 10px;
       font-weight: bold;
-    }
-  }
-  .br-sp {
-    display: none;
-    @include sp {
-      display: block;
     }
   }
 }
