@@ -11,8 +11,8 @@ html {
 }
 body {
   text-align: center;
-  font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体",
-    "ヒラギノ角ゴ Pro W3", sans-serif;
+  font-family: 'Yu Gothic Medium', '游ゴシック Medium', YuGothic, '游ゴシック体',
+    'ヒラギノ角ゴ Pro W3', sans-serif;
   color: black;
 }
 img {
@@ -63,9 +63,9 @@ a {
   color: azure;
   text-shadow: 0 0 10px #ff0;
   h1 {
-    font-family: "Pinyon Script", cursive;
+    font-family: 'Pinyon Script', cursive;
     font-weight: normal;
-    font-size: 12.5rem;
+    font-size: 10rem;
     margin-bottom: 0;
     @include tb {
       font-size: 9rem;
@@ -111,7 +111,7 @@ a {
     letter-spacing: 0.05em;
   }
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     width: 2px;
@@ -166,7 +166,7 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: "Shippori Mincho B1", serif;
+  font-family: 'Shippori Mincho B1', serif;
   font-size: 1.5rem;
   background: linear-gradient(45deg, #003b6f, #0076b3);
   color: #ffffff;

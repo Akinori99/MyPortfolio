@@ -8,7 +8,7 @@
 export default {
   computed: {
     isIndex() {
-      return this.$route.name === "index";
+      return this.$route.name === 'index';
     },
   },
 };
@@ -16,16 +16,17 @@ export default {
 
 <style lang="scss" scoped>
 footer {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 4vh;
+  height: 3vh;
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.9);
   p {
     color: azure;
-    font-family: "Pinyon Script", cursive;
-    font-size: 1rem;
+    font-family: 'Pinyon Script', cursive;
+    font-size: 0.9rem;
   }
 }
 </style>
